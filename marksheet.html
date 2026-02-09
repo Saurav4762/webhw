@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marksheet</title>
+  
+</head>
+<body>
+    <form id="marksheetForm">
+        <fieldset>
+            <legend>Student Marksheet Form</legend>
+            
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required placeholder="Your full name"><br><br>
+
+            <label for="rollno">Roll Number:</label>
+            <input type="text" id="rollno" name="rollno" required placeholder="Your roll number"><br><br>
+
+            <label for="marksinenglish">Marks in English (0-100):</label>
+            <input type="number" id="marksinenglish" name="marksinenglish" required min="0" max="100" placeholder="Enter marks"><br><br>
+
+            <label for="marksinmath">Marks in Math (0-100):</label>
+            <input type="number" id="marksinmath" name="marksinmath" required min="0" max="100" placeholder="Enter marks"><br><br>
+
+            <label for="marksinscience">Marks in Science (0-100):</label>
+            <input type="number" id="marksinscience" name="marksinscience" required min="0" max="100" placeholder="Enter marks"><br><br>
+
+            <label for="marks">Total Marks Obtained:</label>
+            <input type="number" id="marks" name="marks" readonly><br><br>
+
+            <label for="percentage">Percentage (%):</label>
+            <input type="number" id="percentage" name="percentage" readonly step="0.01"><br><br>
+
+            <label for="grade">Grade:</label>
+            <input type="text" id="grade" name="grade" readonly><br><br>
+
+            <button type="submit">Submit Marksheet</button>
+        </fieldset>
+    </form>
+
+    <script src="marksheet.js"></script>
+</body>
+</html>
