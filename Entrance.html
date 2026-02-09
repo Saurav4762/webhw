@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrance Exam Registration</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+        <legend>Entrance Exam Registration Form</legend>
+            <label for="fullname">Full Name :</label>
+            <input type="text" id="fullname" name="fullname" required placeholder="Your full name"><br><br>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required><br><br>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required min="16" max="30" placeholder="16 - 30"><br><br>
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" required placeholder="e.g. 98XXXXXXXX"><br><br>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com"><br><br>
+
+
+            <label>Gender:</label>
+            <div class="radios">
+                <label><input type="radio" name="gender" value="Male"> Male</label><br><br>
+                <label><input type="radio" name="gender" value="Female"> Female</label><br><br>
+                <label><input type="radio" name="gender" value="Other"> Other</label><br><br>
+            </div>
+
+            <label for="stream">Exam Stream:</label>
+            <select id="stream" name="stream" required>
+                <option value="" disabled selected>Select stream</option><br><br>
+                <option value="Science">Science</option><br><br>
+                <option value="Management">Management</option><br><br>
+                <option value="Arts">Arts</option><br><br>
+            </select>
+            <br><br>
+
+            <label><input type="checkbox" id="agree" name="agree"> I confirm all details are correct</label>
+
+            <div id="messages" aria-live="polite"></div><br><br>
+
+            <button type="submit">Submit Registration</button>
+    </fieldset>
+    </form>
+    <script src ="entrance.js"></script>
+</body>
+</html>
