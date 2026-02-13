@@ -1,40 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrance Exam Registration</title>
-    <style>
-        /* Centered success overlay */
-        #success-overlay{
-            position:fixed;
-            inset:0;
-            /* hidden by default; JS will add .visible to show */
-            display:none;
-            align-items:center;
-            justify-content:center;
-            background:rgba(0,0,0,0.4);
-            z-index:9999;
-        }
-        #success-overlay.visible{ display:flex !important; }
-        .success-box{
-            background:#fff;
-            padding:24px 28px;
-            border-radius:8px;
-            box-shadow:0 8px 24px rgba(0,0,0,0.2);
-            text-align:center;
-            max-width:90%;
-            width:380px;
-            font-family:Arial, Helvetica, sans-serif;
-        }
-        .success-box p{ margin:0 0 12px 0; font-size:18px; color:#1a7f37; }
-        .success-actions{ display:flex; gap:8px; justify-content:center; }
-        .success-actions button{ padding:8px 12px; border-radius:6px; border:1px solid #ccc; background:#f2f2f2; cursor:pointer }
-    </style>
-</head>
 <body>
     <form action="" id="regform">
         <fieldset>
+
+            <div class="container">
         <legend>Entrance Exam Registration Form</legend>
         <!-- Input fields for registration details -->
             <label for="Sauravkumaruprety">Full Name :</label>
@@ -50,9 +22,10 @@
             <label for="phone">Phone Number:</label>
             <input type="text" id="phone" name="phone" required placeholder="e.g. 98XXXXXXXX"><br><br>
 
+            <div class="form-group">
             <label for="email">Email Address:</label>
             <input type="email" id="email" name="email" required placeholder="you@example.com"><br><br>
-
+            </div>
 
             <label>Gender:</label>
             <div class="radios">
@@ -82,17 +55,8 @@
             
     </fieldset>
     </form>
+</div>
 
-    <!-- Centered success overlay (hidden by default) -->
-    <div id="success-overlay" hidden>   
-        <div class="success-box" role="dialog" aria-modal="true">
-            <p id="success-text">Registration successful!</p>
-            <div class="success-actions">
-                <button id="print-btn" type="button">Print</button>
-                <button id="close-btn" type="button">Close</button>
-            </div>
-        </div>
-    </div>
     <script src ="entrance.js"></script>
 </body>
 </html>
