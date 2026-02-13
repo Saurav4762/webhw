@@ -4,14 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrance Exam Registration</title>
+    <style>
+        /* Centered success overlay */
+        #success-overlay{
+            position:fixed;
+            inset:0;
+            /* hidden by default; JS will add .visible to show */
+            display:none;
+            align-items:center;
+            justify-content:center;
+            background:rgba(0,0,0,0.4);
+            z-index:9999;
+        }
+        #success-overlay.visible{ display:flex !important; }
+        .success-box{
+            background:#fff;
+            padding:24px 28px;
+            border-radius:8px;
+            box-shadow:0 8px 24px rgba(0,0,0,0.2);
+            text-align:center;
+            max-width:90%;
+            width:380px;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        .success-box p{ margin:0 0 12px 0; font-size:18px; color:#1a7f37; }
+        .success-actions{ display:flex; gap:8px; justify-content:center; }
+        .success-actions button{ padding:8px 12px; border-radius:6px; border:1px solid #ccc; background:#f2f2f2; cursor:pointer }
+    </style>
 </head>
 <body>
-    <form action="">
+    <form action="" id="regform">
         <fieldset>
         <legend>Entrance Exam Registration Form</legend>
-            <label for="fullname">Full Name :</label>
-            <input type="text" id="fullname" name="fullname" required placeholder="Your full name"><br><br>
+        <!-- Input fields for registration details -->
+            <label for="Sauravkumaruprety">Full Name :</label>
+            <input type="text" id="Sauravkumaruprety" name="Sauravkumaruprety" required placeholder="Your full name"><br><br>
 
+            <!-- Date input for date of birth -->
             <label for="dob">Date of Birth:</label>
             <input type="date" id="dob" name="dob" required><br><br>
 
@@ -31,7 +60,7 @@
                 <label><input type="radio" name="gender" value="Female"> Female</label><br><br>
                 <label><input type="radio" name="gender" value="Other"> Other</label><br><br>
             </div>
-
+            <!-- Dropdown for exam stream -->
             <label for="stream">Exam Stream:</label>
             <select id="stream" name="stream" required>
                 <option value="" disabled selected>Select stream</option><br><br>
@@ -40,7 +69,7 @@
                 <option value="MCA">MCA</option><br><br>
                 <option value="MBA">MBA</option><br><br>
                 <option value="BTECH-IT">BTECH-IT</option><br><br>
-                <option value="other">others</option><br><br>
+                    <option value="other">others</option><br><br>
             </select>
             <br><br>
 
@@ -49,8 +78,21 @@
             <div id="messages" aria-live="polite"></div><br><br>
 
             <button type="submit">Submit Registration</button>
+
+            
     </fieldset>
     </form>
+
+    <!-- Centered success overlay (hidden by default) -->
+    <div id="success-overlay" hidden>   
+        <div class="success-box" role="dialog" aria-modal="true">
+            <p id="success-text">Registration successful!</p>
+            <div class="success-actions">
+                <button id="print-btn" type="button">Print</button>
+                <button id="close-btn" type="button">Close</button>
+            </div>
+        </div>
+    </div>
     <script src ="entrance.js"></script>
 </body>
 </html>

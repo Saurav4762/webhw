@@ -69,7 +69,9 @@ form.addEventListener('submit', function(evt) {
     let percentage = parseFloat(percentageInput.value);
     let grade = gradeInput.value;
 
-    alert(`Marksheet Summary\n\nName: ${fullname}\nRoll No: ${rollno}\n\nEnglish: ${english}\nMath: ${math}\nScience: ${science}\n\nTotal: ${total}/300\nPercentage: ${percentage.toFixed(2)}%\nGrade: ${grade}`);
+    alert(`Marksheet Summary\n\nName: ${fullname}\nRoll No: ${rollno}\n\nEnglish: 
+        ${english}\nMath: ${math}\nScience: ${science}\n\nTotal: ${total}/300\nPercentage:
+         ${percentage.toFixed(2)}%\nGrade: ${grade}`);
 
     // Optionally, reset the form
     // form.reset();
