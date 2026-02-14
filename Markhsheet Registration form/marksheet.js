@@ -46,13 +46,13 @@ scienceInput.addEventListener('input', calculateMarks);
 // Handle form submission
 form.addEventListener('submit', function(evt) {
     evt.preventDefault();
-    let fullname = document.getElementById('fullname').value.trim();
+    let fullname = document.getElementById('Sauravkumaruprety').value.trim();
     let rollno = document.getElementById('rollno').value.trim();
 
     // Basic validations
     if (!fullname) {
         alert('Please enter full name.');
-        document.getElementById('fullname').focus();
+        document.getElementById('Sauravkumaruprety').focus();
         return;
     }
     const namePattern = /^[a-zA-Z\s]+$/;

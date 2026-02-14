@@ -13,7 +13,7 @@
 document.getElementById('simForm').addEventListener('submit', function(evt) {
     evt.preventDefault();
 
-    var name = document.getElementById('fullname').value.trim();
+    var name = document.getElementById('Sauravkumaruprety').value.trim();
     var dob = document.getElementById('dob').value;
     var citizenID = document.getElementById('citizenID').value.trim();
     var simtype = document.getElementById('simtype').value;

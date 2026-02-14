@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Online Course Enrollment</title>
+    <link rel="stylesheet" href="online.css">
+</head>
+<body>
+    <form id="enrollForm">
+        <fieldset>
+            <legend>Online Course Enrollment Form</legend>
+
+            <div class="form-group">
+                <label >Student Name</label>
+                <input type="text" id="Sauravkumaruprety" required placeholder="Your full name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="you@example.com">
+            </div>
+
+            <div class="form-group">
+                <label for="course">Course Name</label>
+                <select id="course" name="course">
+                    <option value="">-- Select a course --</option>
+                    <option value="web">Web Development</option>
+                    <option value="data">Data Science</option>
+                    <option value="design">UI/UX Design</option>
+                    <option value="ml">Machine Learning</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Mode of Study</label>
+                <label><input type="radio" name="mode" value="online"> Online</label>
+                <label><input type="radio" name="mode" value="offline"> Offline</label>
+            </div>
+
+            <div class="form-group">
+                <label>Previous Experience</label>
+                <label><input type="radio" name="experience" value="yes"> Yes</label>
+                <label><input type="radio" name="experience" value="no" checked> No</label>
+            </div>
+
+            <div class="form-group" id="expGroup" style="display:none;">
+                <label for="expDetails">Experience Details</label>
+                <textarea id="expDetails" name="expDetails" rows="4" placeholder="Describe your relevant experience"></textarea>
+            </div>
+
+            <div id="messages" aria-live="polite"></div>
+
+            <button type="submit">Enroll</button>
+        </fieldset>
+    </form>
+
+    <script src="online.js"></script>
+</body>
+</html>

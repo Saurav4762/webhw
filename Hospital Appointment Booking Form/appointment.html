@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Hospital Appointment Booking</title>
+    <link rel="stylesheet" href="appointment.css">
+</head>
+<body>
+    <form id="appointmentForm">
+        <fieldset>
+            <legend>Book Hospital Appointment</legend>
+
+            <div class="form-group">
+                <label>Patient Name</label>
+                <input type="text" id="Sauravkumaruprety"  placeholder="Full name">
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" min="1" placeholder="Age">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" name="phone" placeholder="e.g. 9812345678">
+            </div>
+
+            <div class="form-group">
+                <label for="department">Department</label>
+                <select id="department" name="department">
+                    <option value="">-- Select department --</option>
+                    <option value="general">General Medicine</option>
+                    <option value="ent">ENT</option>
+                    <option value="cardio">Cardiology</option>
+                    <option value="ortho">Orthopedics</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Appointment Date</label>
+                <input type="date" id="date" name="date">
+            </div>
+
+            <div class="form-group">
+                <label for="timeslot">Time Slot</label>
+                <select id="timeslot" name="timeslot">
+                    <option value="">-- Select time slot --</option>
+                    <option value="09:00">09:00 AM</option>
+                    <option value="11:00">11:00 AM</option>
+                    <option value="14:00">02:00 PM</option>
+                    <option value="16:00">04:00 PM</option>
+                </select>
+            </div>
+
+            <div id="messages" aria-live="polite"></div>
+
+            <button type="submit">Book Appointment</button>
+        </fieldset>
+    </form>
+
+    <script src="appointment.js"></script>
+</body>
+</html>
