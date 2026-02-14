@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIM Card Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="simForm">
+        <fieldset>
+            <legend>SIM Card Registration Form</legend>
+
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required placeholder="Your full name"><br><br>
+
+            <label for="citizenID">Citizen ID:</label>
+            <input type="text" id="citizenID" name="citizenID" required placeholder="Your citizen ID"><br><br>
+
+            <label for="simtype">SIM Type:</label>
+            <select id="simtype" name="simtype" required>
+                <option value="">Select SIM Type</option>
+                <option value="prepaid">Prepaid</option>
+                <option value="postpaid">Postpaid</option>
+            </select><br><br>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required><br><br>
+
+           <label for ="nationality">Nationality:</label>
+           <select id="nationality" name="nationality" required>
+                <option value="">Select Nationality</option>
+                <option value="nepali">Nepali</option>
+                <option value="indian">Indian</option>
+                <option value="other">Other</option>
+            </select><br><br>
+
+            <label><input type="checkbox" id="terms" name="terms" required> I agree to the terms and conditions</label><br><br>
+            <button type="submit">Submit Registration</button>
+        </fieldset>
+    </form>
+
+    <script src="sim.js"></script>
+    </body>
+</html>

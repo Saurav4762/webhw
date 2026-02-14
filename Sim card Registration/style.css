@@ -1,0 +1,77 @@
+:root{
+    --bg: #f7fafc;
+    --card: #ffffff;
+    --accent: #2563eb;
+    --accent-strong: #1d4ed8;
+    --muted: #6b7280;
+    --border: #e6edf3;
+    --danger: #b91c1c;
+}
+
+*{box-sizing:border-box}
+.container{
+    max-width:720px;
+    margin:0 auto;
+    background:var(--card);
+    padding: 20px 28px;
+    border-radius:8px;
+    box-shadow:0 8px 24px rgba(2,6,23,0.06);
+}
+
+html,body{
+    height:100%;
+    min-height:100vh;
+    margin:0;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background:var(--bg);
+    color:#0f172a;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+fieldset{border:none;padding:0;margin:0}
+legend{font-size:1.25rem;font-weight:700;margin-bottom:12px}
+
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-group{margin-bottom:12px}
+label{display:block;margin-bottom:6px;color:var(--muted);font-size:0.95rem}
+
+input[type="text"], input[type="email"], input[type="number"], input[type="date"], select, textarea{
+    width:100%;
+    padding:10px 12px;
+    border:1px solid var(--border);
+    border-radius:8px;
+    font-size:0.95rem;
+    background:#fff;
+}
+
+input:focus, select:focus, textarea:focus{outline:none;box-shadow:0 0 0 4px rgba(37,99,235,0.08);border-color:var(--accent-strong)}
+input[readonly]{background:#f8fafc}
+
+.help{font-size:0.85rem;color:var(--muted);margin-top:6px}
+
+button[type="submit"]{
+    display:inline-block;
+    background:var(--accent);
+    color:#fff;
+    border:none;
+    padding:10px 16px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:700;
+    margin-top:6px;
+}
+button[type="submit"]:hover{background:var(--accent-strong)}
+
+.error{border-color:var(--danger)!important}
+.error-message{color:var(--danger);font-size:0.9rem;margin-top:6px}
+
+#messages{min-height:1.25rem}
+
+@media (max-width:720px){
+    .form-row{grid-template-columns:1fr}
+    .container{margin:18px;padding:16px}
+}
+
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
