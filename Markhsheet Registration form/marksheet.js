@@ -46,12 +46,31 @@ scienceInput.addEventListener('input', calculateMarks);
 // Handle form submission
 form.addEventListener('submit', function(evt) {
     evt.preventDefault();
-
     let fullname = document.getElementById('fullname').value.trim();
     let rollno = document.getElementById('rollno').value.trim();
 
-    if (!fullname || !rollno) {
-        alert('Please fill in all required fields!');
+    // Basic validations
+    if (!fullname) {
+        alert('Please enter full name.');
+        document.getElementById('fullname').focus();
+        return;
+    }
+    const namePattern = /^[a-zA-Z\s]+$/;
+    if (!namePattern.test(fullname)) {
+        alert('Please enter a valid name (letters and spaces only).');
+        document.getElementById('fullname').focus();
+        return;
+    }
+
+    if (!rollno) {
+        alert('Please enter roll number.');
+        document.getElementById('rollno').focus();
+        return;
+    }
+    const rollPattern = /^[A-Za-z0-9\-]+$/;
+    if (!rollPattern.test(rollno)) {
+        alert('Roll number may contain letters, numbers and hyphens only.');
+        document.getElementById('rollno').focus();
         return;
     }
 
@@ -59,19 +78,35 @@ form.addEventListener('submit', function(evt) {
     let math = parseFloat(mathInput.value) || 0;
     let science = parseFloat(scienceInput.value) || 0;
 
-    if (english < 0 || english > 100 || math < 0 || math > 100 || science < 0 || science > 100) {
-        alert('Marks must be between 0 and 100!');
-        return;
-    }
+    if (english < 0 || english > 100) { alert('English marks must be between 0 and 100.'); englishInput.focus(); return; }
+    if (math < 0 || math > 100) { alert('Math marks must be between 0 and 100.'); mathInput.focus(); return; }
+    if (science < 0 || science > 100) { alert('Science marks must be between 0 and 100.'); scienceInput.focus(); return; }
 
     // Display summary
-    let total = parseFloat(totalInput.value);
-    let percentage = parseFloat(percentageInput.value);
-    let grade = gradeInput.value;
+    let total = parseFloat(totalInput.value) || (english + math + science);
+    let percentage = parseFloat(percentageInput.value) || ((total / 300) * 100);
+    let grade = gradeInput.value || (function(p){
+        if (p >= 90) return 'A+';
+        if (p >= 80) return 'A';
+        if (p >= 70) return 'B+';
+        if (p >= 60) return 'B';
+        if (p >= 50) return 'C';
+        return 'F';
+    })(percentage);
 
-    alert(`Marksheet Summary\n\nName: ${fullname}\nRoll No: ${rollno}\n\nEnglish: 
-        ${english}\nMath: ${math}\nScience: ${science}\n\nTotal: ${total}/300\nPercentage:
-         ${percentage.toFixed(2)}%\nGrade: ${grade}`);
+    const summary = [
+        `Marksheet Summary`,
+        `Name: ${fullname}`,
+        `Roll No: ${rollno}`,
+        `English: ${english}`,
+        `Math: ${math}`,
+        `Science: ${science}`,
+        `Total: ${total}/300`,
+        `Percentage: ${percentage.toFixed(2)}%`,
+        `Grade: ${grade}`
+    ].join('\n');
+
+    alert(summary);
 
     // Optionally, reset the form
     // form.reset();
